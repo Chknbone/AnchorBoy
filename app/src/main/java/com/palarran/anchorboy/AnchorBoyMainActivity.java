@@ -48,8 +48,9 @@ public class AnchorBoyMainActivity extends Activity {
     }
 
     public void onClickSetPosition (View view) {
-        Intent intent = new Intent(this, LocationProvider.class);
-        startActivity(intent);
+        //TODO Hardcoding location for now. Need to change this for futureness
+        LocationProvider locationProvider = new MockLocationProvider();
+         anchorSetLocation = locationProvider.getLocation();
     }
 
     private void openSettings(){
