@@ -17,7 +17,7 @@ package com.palarran.anchorboy;
  * App will then display amount of feet/yards/meters buoy has moved and the direction boat is
  * drifting and possibly speed in future builds.
  *
- * Future builds will also have ability to use google maps.
+ * Future builds will also have ability to use google maps, send warning text messages...
  */
 
 import android.app.Activity;
@@ -30,6 +30,7 @@ import android.view.View;
 
 public class AnchorBoyMainActivity extends Activity {
 
+    private Location anchorSetLocation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,11 @@ public class AnchorBoyMainActivity extends Activity {
 
     public void onClickBluetooth (View view) { //Takes user to the Bluetooth connection/selection page
         Intent intent = new Intent(this, PairBluetoothActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickSetPosition (View view) {
+        Intent intent = new Intent(this, LocationProvider.class);
         startActivity(intent);
     }
 
@@ -73,5 +79,15 @@ public class AnchorBoyMainActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    /**
+     * This method only returns whatever anchor position was returned from the onClickSetPosition method
+     *
+     * @return
+     */
+    public Location getAnchorLocation() {
+
+        return anchorSetLocation;
     }
 }
