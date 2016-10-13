@@ -39,7 +39,6 @@ public class AnchorBoyMainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anchor_boy_main);
         
-        //TODO Working on putting something in the textview if bluetooth is not connected. Normally the GPS data would go there.
         noBluetoothNoGpsFix = (TextView) findViewById(R.id.no_gps_fix);
         noBluetoothNoGpsFix.setTextSize(35);
     }

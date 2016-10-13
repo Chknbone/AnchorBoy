@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -113,6 +114,10 @@ public class BluetoothGpsDataActivity extends Activity {
         } catch (IOException e2) {
             Toast.makeText(getBaseContext(), "Socket did not close", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void onClickSetPosition(View view) {
+        //TODO write code to handle what happens when the "Set Position" button is clicked.
     }
 
     //create new class for connect thread

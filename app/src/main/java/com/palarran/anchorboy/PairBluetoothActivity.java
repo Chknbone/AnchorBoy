@@ -108,7 +108,7 @@ public class PairBluetoothActivity extends Activity {
             String address = info.substring(info.length() - 17);
 
             // Make an intent to start next activity while taking an extra which is the MAC address.
-            Intent intent = new Intent(PairBluetoothActivity.this, AnchorBoyMainActivity.class);
+            Intent intent = new Intent(PairBluetoothActivity.this, BluetoothGpsDataActivity.class);
             intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
             startActivity(intent);
         }
