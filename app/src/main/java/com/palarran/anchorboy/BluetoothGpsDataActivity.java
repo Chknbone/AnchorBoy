@@ -31,6 +31,7 @@ public class BluetoothGpsDataActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_bluetooth_gps_data);
 
         gpsPositionString = (TextView) findViewById(R.id.LAT_LONG);                     //Link textViews to respective views
 

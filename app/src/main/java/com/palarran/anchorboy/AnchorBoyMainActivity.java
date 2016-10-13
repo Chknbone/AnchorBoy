@@ -27,10 +27,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class AnchorBoyMainActivity extends Activity {
 
     private Location anchorSetLocation;
+    private TextView noBluetoothNoGpsFix;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,8 @@ public class AnchorBoyMainActivity extends Activity {
         setContentView(R.layout.activity_anchor_boy_main);
         
         //TODO Working on putting something in the textview if bluetooth is not connected. Normally the GPS data would go there.
-        Intent intent = new Intent(this, BluetoothGpsDataActivity.class);
-        startActivity(intent);
+        noBluetoothNoGpsFix = (TextView) findViewById(R.id.no_gps_fix);
+        noBluetoothNoGpsFix.setTextSize(35);
     }
 
     public void onClickBluetooth (View view) { //Takes user to the Bluetooth connection/selection page
