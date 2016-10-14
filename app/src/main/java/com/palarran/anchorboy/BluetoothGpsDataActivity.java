@@ -118,6 +118,7 @@ public class BluetoothGpsDataActivity extends Activity {
 
     public void onClickSetPosition(View view) {
         //TODO write code to handle what happens when the "Set Position" button is clicked.
+
     }
 
     //create new class for connect thread

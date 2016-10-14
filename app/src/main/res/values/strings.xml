@@ -11,6 +11,7 @@
     <string name="anchor_position">Anchor Position:</string>
     <string name="set_position">Set Position</string>
     <string name="show_map">Map</string>
+    <string name="gps_fix">GPS Fix: </string>
     <string name="no_gps_fix">No GPS Fix!</string>
 
     <string name="connect_bluetooth">Connect to AnchorBoy via bluetooth.</string>

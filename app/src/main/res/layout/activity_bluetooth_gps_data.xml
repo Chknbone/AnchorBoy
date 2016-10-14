@@ -9,21 +9,32 @@
             android:columnCount="2">
 
     <TextView
-        android:id="@+id/anchorPosition"
+        android:id="@+id/gps_fix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="0"
         android:layout_column="0"
         android:layout_columnSpan="1"
         android:layout_gravity="center_horizontal"
-        android:text="@string/anchor_position"
+        android:text="@string/gps_fix"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/LAT_LONG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_horizontal"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <Button
         android:id="@+id/SET_POSITION"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="0"
+        android:layout_row="1"
         android:layout_column="1"
         android:layout_columnSpan="1"
         android:layout_gravity="center_horizontal"
@@ -31,12 +42,23 @@
         android:onClick="onClickSetPosition"/>
 
     <TextView
-        android:id="@+id/LAT_LONG"
+        android:id="@+id/anchorPosition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="2"
         android:layout_column="0"
-        android:layout_columnSpan="2"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/anchor_position"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/LOCKED_LAT_LONG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="1"
+        android:layout_columnSpan="1"
         android:layout_gravity="center_horizontal"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge"/>
