@@ -12,11 +12,30 @@
     <string name="set_position">Set Position</string>
     <string name="show_map">Map</string>
     <string name="gps_fix">GPS Fix: </string>
-    <string name="no_gps_fix">No GPS Fix!</string>
+
+    <string name="config_page_header">AnchorBoy Options</string>
+
+    <string name="unit_selection">Units:</string>
+    <string-array name="units_array">
+        <item>Feet</item>
+        <item>Meters</item>
+        <item>Fathoms</item>
+    </string-array>
+
+    <string name="drag_radius">Drag Radius:</string>
+    <string-array name="radius_array">
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
 
     <string name="connect_bluetooth">Connect to AnchorBoy via bluetooth.</string>
-    <string name="no_bluetooth">Go to App without connecting to AnchorBoy</string>
     <string name="bluetooth_button">Connect Bluetooth</string>
+    <string name="config_text">Go to AnchorBoy configuration page.</string>
     <string name="config_button">Configuration</string>
 
 </resources>
