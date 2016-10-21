@@ -11,8 +11,10 @@ import android.view.View;
  *
  * This is the first page that loads when the App is started.
  *
- * User is given two choices/buttons. Either connect to the AnchorBoy via Bluetooth, or continue
- * on to the App's main page without connecting via bluetooth.
+ * User is given two choices/buttons;
+ *
+ * 1: Connect to the AnchorBoy MainPage via Bluetooth.
+ * 2: Go to the App's configuration/utility page without connecting via bluetooth.
  */
 
 public class StartPageActivity extends Activity {
@@ -28,8 +30,8 @@ public class StartPageActivity extends Activity {
         startActivity(intent);
     }
 
-    public void onClickMain (View view) { //Takes user to the Main activity page w/out connecting to bluetooth
-        Intent intent = new Intent(this, AnchorBoyMainActivity.class);
+    public void onClickConfig(View view) { //Takes user to the Main activity page w/out connecting to bluetooth
+        Intent intent = new Intent(this, ConfigUtilityPageActivity.class);
         startActivity(intent);
     }
 }

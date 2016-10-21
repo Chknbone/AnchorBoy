@@ -14,10 +14,12 @@ public class Location {
     }
 
     public String getLatitude() {
+
         return latitude;
     }
 
     public String getLongitude() {
+
         return longitude;
     }
 }

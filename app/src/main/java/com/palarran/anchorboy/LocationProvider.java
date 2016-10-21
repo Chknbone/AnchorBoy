@@ -6,6 +6,6 @@ package com.palarran.anchorboy;
 
 public interface LocationProvider {
 
-    public Location getLocation();
+    Location getLocation();
 
 }
