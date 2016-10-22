@@ -28,18 +28,18 @@ import android.widget.Toast;
 public class ConfigUtilityPageActivity extends Activity {
 
     private Location anchorSetLocation;
-    private TextView noBluetoothNoGpsFix;
+    private TextView configPageNoGpsReminder;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config_utility_page);
 
-        noBluetoothNoGpsFix = (TextView) findViewById(R.id.config_page_header);
-        noBluetoothNoGpsFix.setTextSize(35);
+        configPageNoGpsReminder = (TextView) findViewById(R.id.config_page_header);
+        configPageNoGpsReminder.setTextSize(35);
         Toast.makeText(getBaseContext(), "GPS is not connected", Toast.LENGTH_LONG).show();
 
-        //TODO // FIXME: 10/21/2016 Accesses the unit_spinner Spinner. Spinners show up and contain options, but they mean/do nothing yet.
+        //TODO // FIXME: 10/21/2016 Accesses the unit_spinner Spinner. Spinner shows up and contains options, but they do nothing yet.
         Spinner spinnerUnit = (Spinner) findViewById(R.id.unit_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapterUnit = ArrayAdapter.createFromResource(this, R.array.units_array, android.R.layout.simple_spinner_item);
@@ -48,13 +48,6 @@ public class ConfigUtilityPageActivity extends Activity {
         // Apply the adapter to the spinner
         spinnerUnit.setAdapter(adapterUnit);
 
-        Spinner spinnerRadius = (Spinner) findViewById(R.id.drag_radius_spinner);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapterRadius = ArrayAdapter.createFromResource(this, R.array.radius_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of unit choices appears
-        adapterRadius.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinnerRadius.setAdapter(adapterRadius);
     }
 
 

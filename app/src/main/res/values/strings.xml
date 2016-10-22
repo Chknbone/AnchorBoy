@@ -25,15 +25,8 @@
         <item>Fathoms</item>
     </string-array>
     <string name="drag_radius">Drag Radius:</string>
-    <string-array name="radius_array">
-        <item>5</item>
-        <item>10</item>
-        <item>20</item>
-        <item>25</item>
-        <item>30</item>
-        <item>40</item>
-        <item>50</item>
-    </string-array>
+    <string name="drag_radius_input">Drag number</string>
+    <string name="drag_radius_number">Drag radius.</string>
 
     <!--activity_start_page.xml-->
     <string name="connect_bluetooth">Connect to AnchorBoy via bluetooth.</string>
