@@ -9,59 +9,54 @@
             android:columnCount="2">
 
     <TextView
-        android:id="@+id/gps_fix"
+        android:id="@+id/config_page_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="0"
         android:layout_column="0"
-        android:layout_columnSpan="1"
+        android:layout_columnSpan="2"
         android:layout_gravity="center_horizontal"
-        android:text="@string/gps_fix"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:text="@string/config_page_header"/>
 
     <TextView
-        android:id="@+id/LAT_LONG"
+        android:id="@+id/unit_selection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="1"
+        android:layout_row="1"
+        android:layout_column="0"
         android:layout_columnSpan="1"
-        android:layout_gravity="center_horizontal"
-        android:text=""
+        android:layout_gravity="start"
+        android:text="@string/unit_selection"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <Button
-        android:id="@+id/SET_POSITION"
+    <Spinner
+        android:id="@+id/unit_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="1"
         android:layout_column="1"
         android:layout_columnSpan="1"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/set_position"
-        android:onClick="onClickSetPosition"/>
+        android:layout_gravity="start"/>
 
     <TextView
-        android:id="@+id/anchorPosition"
+        android:id="@+id/drag_radius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="2"
         android:layout_column="0"
         android:layout_columnSpan="1"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/anchor_position"
+        android:layout_gravity="start"
+        android:text="@string/drag_radius"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <TextView
-        android:id="@+id/LOCKED_LAT_LONG"
+    <Spinner
+        android:id="@+id/drag_radius_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="2"
         android:layout_column="1"
         android:layout_columnSpan="1"
-        android:layout_gravity="center_horizontal"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:layout_gravity="start"/>
 
     <Button
         android:id="@+id/BLUETOOTH_BUTTON"

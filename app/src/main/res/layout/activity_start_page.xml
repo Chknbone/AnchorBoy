@@ -16,7 +16,6 @@
         android:paddingBottom="15dp"
         />
 
-    <!-- layout_centerHorizontal may need to be changed to gravity="center_horizontal" -->
     <Button
         android:id="@+id/BLUETOOTH_BUTTON"
         android:layout_width="wrap_content"
@@ -32,9 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/BLUETOOTH_BUTTON"
-        android:text="@string/no_bluetooth"
+        android:text="@string/config_text"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"/>
 
@@ -46,6 +45,6 @@
         android:layout_centerHorizontal="true"
         android:text="@string/config_button"
         android:textSize="25sp"
-        android:onClick="onClickMain"/>
+        android:onClick="onClickConfig"/>
 
 </RelativeLayout>

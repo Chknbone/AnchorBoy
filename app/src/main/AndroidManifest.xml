@@ -2,14 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.palarran.anchorboy">
 
-    <uses-sdk android:minSdkVersion="14"/>
-
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -20,16 +14,14 @@
         <activity android:name=".StartPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            />
         </activity>
-        <activity android:name=".AnchorBoyMainActivity"/>
+        <activity android:name=".ConfigUtilityPageActivity"/>
         <activity android:name=".DeviceListActivity"/>
         <activity android:name=".PairBluetoothActivity"/>
-        <activity android:name=".BluetoothGpsDataActivity">
-        </activity>
+        <activity android:name=".AnchorBoyMainActivity"/>
+
     </application>
 
 </manifest>

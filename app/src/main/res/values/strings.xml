@@ -1,27 +1,29 @@
 <resources>
     <string name="app_name">AnchorBoy</string>
 
+    <!--Menu Bar-->
     <string name="action_search">Search</string>
     <string name="action_settings">Settings</string>
 
+    <!--activity_pair_bluetooth.xml-->
     <string name="select_bluetooth">Select AnchorBoy Bluetooth device from paired devices:</string>
     <string name="pair_device">If device is not listed pair your device in Android settings</string>
     <string name="connecting">Connecting…</string>
 
+    <!--activity_anchor_boy_main.xml-->
+    <string name="gps_fix">GPS Fix: </string>
     <string name="anchor_position">Anchor Position:</string>
     <string name="set_position">Set Position</string>
     <string name="show_map">Map</string>
-    <string name="gps_fix">GPS Fix: </string>
 
+    <!--activity_config_utility_page.xml-->
     <string name="config_page_header">AnchorBoy Options</string>
-
     <string name="unit_selection">Units:</string>
     <string-array name="units_array">
         <item>Feet</item>
         <item>Meters</item>
         <item>Fathoms</item>
     </string-array>
-
     <string name="drag_radius">Drag Radius:</string>
     <string-array name="radius_array">
         <item>5</item>
@@ -33,6 +35,7 @@
         <item>50</item>
     </string-array>
 
+    <!--activity_start_page.xml-->
     <string name="connect_bluetooth">Connect to AnchorBoy via bluetooth.</string>
     <string name="bluetooth_button">Connect Bluetooth</string>
     <string name="config_text">Go to AnchorBoy configuration page.</string>

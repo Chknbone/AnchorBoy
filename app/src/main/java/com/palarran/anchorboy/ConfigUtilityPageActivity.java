@@ -39,7 +39,7 @@ public class ConfigUtilityPageActivity extends Activity {
         noBluetoothNoGpsFix.setTextSize(35);
         Toast.makeText(getBaseContext(), "GPS is not connected", Toast.LENGTH_LONG).show();
 
-        //TODO // FIXME: 10/21/2016 Accesses the unit_spinner Spinner.
+        //TODO // FIXME: 10/21/2016 Accesses the unit_spinner Spinner. Spinners show up and contain options, but they mean/do nothing yet.
         Spinner spinnerUnit = (Spinner) findViewById(R.id.unit_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapterUnit = ArrayAdapter.createFromResource(this, R.array.units_array, android.R.layout.simple_spinner_item);
