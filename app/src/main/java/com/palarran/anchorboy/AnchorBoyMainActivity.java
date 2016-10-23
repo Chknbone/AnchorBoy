@@ -39,7 +39,6 @@ import java.util.UUID;
 public class AnchorBoyMainActivity extends Activity {
 
     private TextView gpsPositionString;
-    private TextView anchorSetLocation;
     private Handler bluetoothIn;
 
     private final int handlerState = 0;        				 //used to identify handler message
@@ -58,7 +57,7 @@ public class AnchorBoyMainActivity extends Activity {
         gpsPositionString = (TextView) findViewById(R.id.LAT_LONG);                     //Link textViews to respective views
 
         bluetoothIn = new Handler() {
-            public void handleMessage(android.os.Message msg) {                                 // data coming from Bluetooth Buoy is handled here
+            public void handleMessage(android.os.Message msg) {                         // data coming from Bluetooth Buoy is handled here
                 if (msg.what == handlerState) {										    // if message is what is expected
                     String readMessage = (String) msg.obj;                              // cast msg.obj to String
                     gpsData.append(readMessage);      						            // keep appending to string until end of string (!) is reached
@@ -137,22 +136,11 @@ public class AnchorBoyMainActivity extends Activity {
         }
     }
 
-//    public void onClickSetPosition(View view) {
-//        //TODO write code to handle what happens when the "Set Position" button is clicked.
-//        //TODO Hardcoding location for now. Need to change this for futureness
-//        LocationProvider locationProvider = new MockLocationProvider();
-//        anchorSetLocation = locationProvider.getLocation(); // FIXME: 10/20/2016
-//    }
+    public void onClickSetPosition(View view) {
+        //TODO write code to handle what happens when the "Set Position" button is clicked.
+        //TODO Hardcoding location for now. Need to change this for futureness
 
-    /**
-     * This method only returns whatever anchor position was returned from the onClickSetPosition method
-     *
-     * @return
-     */
-//    public Location getAnchorLocation() {
-//
-//        return anchorSetLocation; // FIXME: 10/20/2016
-//    }
+    }
 
     //create new class for connect thread
     private class ConnectedThread extends Thread {

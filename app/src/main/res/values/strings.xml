@@ -26,7 +26,7 @@
     </string-array>
     <string name="drag_radius">Drag Radius:</string>
     <string name="drag_radius_input">Drag number</string>
-    <string name="drag_radius_number">Drag radius.</string>
+    <string name="drag_radius_number">Enter drag limit</string>
 
     <!--activity_start_page.xml-->
     <string name="connect_bluetooth">Connect to AnchorBoy via bluetooth.</string>
