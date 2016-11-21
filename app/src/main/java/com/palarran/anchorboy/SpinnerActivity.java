@@ -1,6 +1,6 @@
 package com.palarran.anchorboy;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -9,7 +9,7 @@ import android.widget.AdapterView;
  * Created by CB on 10/21/2016.
  */
 
-public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
+public class SpinnerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         // An item was selected. You can retrieve the selected item using

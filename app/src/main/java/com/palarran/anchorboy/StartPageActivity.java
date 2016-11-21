@@ -1,8 +1,8 @@
 package com.palarran.anchorboy;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
@@ -17,7 +17,7 @@ import android.view.View;
  * 2: Go to the App's configuration/utility page without connecting via bluetooth.
  */
 
-public class StartPageActivity extends Activity {
+public class StartPageActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

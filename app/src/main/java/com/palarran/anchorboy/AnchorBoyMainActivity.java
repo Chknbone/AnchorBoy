@@ -20,13 +20,13 @@ package com.palarran.anchorboy;
  * Future builds will also have ability to use google maps, send warning text messages...
  */
 
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,9 +36,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
 
-public class AnchorBoyMainActivity extends Activity {
+import static com.palarran.anchorboy.R.id.LAT_LONG;
+import static com.palarran.anchorboy.R.id.LOCKED_LAT_LONG;
 
-    private TextView gpsPositionString;
+public class AnchorBoyMainActivity extends AppCompatActivity {
+
+    private static TextView gpsPositionString;
+    private TextView dragRadius;
     private Handler bluetoothIn;
 
     private final int handlerState = 0;        				 //used to identify handler message
@@ -54,10 +58,11 @@ public class AnchorBoyMainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anchor_boy_main);
 
-        gpsPositionString = (TextView) findViewById(R.id.LAT_LONG);                     //Link textViews to respective views
+        gpsPositionString = (TextView) findViewById(LAT_LONG);                          //Link textViews to respective views
+        dragRadius = (TextView) findViewById(R.id.drag_radius_input);                   //Drag Radius value is set on ConfigUtilityPageActivity
 
         bluetoothIn = new Handler() {
-            public void handleMessage(android.os.Message msg) {                         // data coming from Bluetooth Buoy is handled here
+            public void handleMessage(android.os.Message msg) {                                 // data coming from Bluetooth Buoy is handled here
                 if (msg.what == handlerState) {										    // if message is what is expected
                     String readMessage = (String) msg.obj;                              // cast msg.obj to String
                     gpsData.append(readMessage);      						            // keep appending to string until end of string (!) is reached
@@ -90,10 +95,10 @@ public class AnchorBoyMainActivity extends Activity {
     public void onResume() {
         super.onResume();
 
-        //Get MAC address from DeviceListActivity via intent
+        //Get MAC address from BluetoothDeviceListActivity via intent
         Intent intent = getIntent();
 
-        //Get the MAC address from the DeviceListActivity via EXTRA
+        //Get the MAC address from the BluetoothDeviceListActivity via EXTRA
         String address = intent.getStringExtra(PairBluetoothActivity.EXTRA_DEVICE_ADDRESS);
 
         //create device and set the MAC address
@@ -138,8 +143,7 @@ public class AnchorBoyMainActivity extends Activity {
 
     public void onClickSetPosition(View view) {
         //TODO write code to handle what happens when the "Set Position" button is clicked.
-        //TODO Hardcoding location for now. Need to change this for futureness
-
+        Toast.makeText(this, "ANCHOR POSITION SET!", Toast.LENGTH_LONG).show();
     }
 
     //create new class for connect thread

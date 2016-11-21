@@ -13,9 +13,9 @@ package com.palarran.anchorboy;
  * Button to connect Bluetooth and go to Main Activity
  */
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,9 +25,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ConfigUtilityPageActivity extends Activity {
+public class ConfigUtilityPageActivity extends AppCompatActivity {
 
-    private Location anchorSetLocation;
     private TextView configPageNoGpsReminder;
 
     @Override
@@ -49,8 +48,6 @@ public class ConfigUtilityPageActivity extends Activity {
         spinnerUnit.setAdapter(adapterUnit);
 
     }
-
-
 
     public void onClickBluetooth (View view) { //Takes user to the Bluetooth connection/selection page
         Intent intent = new Intent(this, PairBluetoothActivity.class);

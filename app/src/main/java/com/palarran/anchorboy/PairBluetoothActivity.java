@@ -7,11 +7,11 @@ package com.palarran.anchorboy;
  * This Activity handles the bluetooth pairing between App and Arduino on board the AnchorBoy buoy.
  */
 
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,7 +22,7 @@ import android.widget.Toast;
 import java.util.Set;
 
 
-public class PairBluetoothActivity extends Activity {
+public class PairBluetoothActivity extends AppCompatActivity {
     // text view for connection status
     private TextView textConnectionStatus;
 

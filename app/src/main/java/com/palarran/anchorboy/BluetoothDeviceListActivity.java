@@ -8,7 +8,7 @@ import android.os.Bundle;
  * Created by CB on 9/1/2016.
  */
 
-public class DeviceListActivity extends Activity {
+public class BluetoothDeviceListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
