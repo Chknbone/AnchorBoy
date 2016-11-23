@@ -27,6 +27,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -144,6 +147,35 @@ public class AnchorBoyMainActivity extends AppCompatActivity {
     public void onClickSetPosition(View view) {
         //TODO write code to handle what happens when the "Set Position" button is clicked.
         Toast.makeText(this, "ANCHOR POSITION SET!", Toast.LENGTH_LONG).show();
+    }
+
+    private void openSettings(){
+        //TODO make ActionBar setting do something
+    }
+    private void openSearch(){
+        //TODO make ActionBar search do something
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                openSearch();
+                return true;
+            case R.id.action_settings:
+                openSettings();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     //create new class for connect thread

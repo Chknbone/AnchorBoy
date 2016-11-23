@@ -13,7 +13,7 @@
     <!--activity_anchor_boy_main.xml-->
     <string name="gps_fix">GPS Fix: </string>
     <string name="anchor_position">Anchor Position:</string>
-    <string name="set_position">Set Position</string>
+    <string name="set_position">Set Anchor Position</string>
     <string name="show_map">Map</string>
 
     <!--activity_config_utility_page.xml-->
