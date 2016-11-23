@@ -18,6 +18,8 @@ package com.palarran.anchorboy;
  * drifting and possibly speed in future builds.
  *
  * Future builds will also have ability to use google maps, send warning text messages...
+ *
+ * Alarm types (Sound, vibrate, Text, email...)
  */
 
 import android.bluetooth.BluetoothAdapter;
@@ -31,6 +33,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,12 +45,12 @@ import java.io.OutputStream;
 import java.util.UUID;
 
 import static com.palarran.anchorboy.R.id.LAT_LONG;
-import static com.palarran.anchorboy.R.id.LOCKED_LAT_LONG;
+import static com.palarran.anchorboy.R.id.drag_radius;
+import static com.palarran.anchorboy.R.id.drag_radius_input;
 
 public class AnchorBoyMainActivity extends AppCompatActivity {
 
-    private static TextView gpsPositionString;
-    private TextView dragRadius;
+    private TextView gpsPositionString;
     private Handler bluetoothIn;
 
     private final int handlerState = 0;        				 //used to identify handler message
@@ -62,10 +67,23 @@ public class AnchorBoyMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_anchor_boy_main);
 
         gpsPositionString = (TextView) findViewById(LAT_LONG);                          //Link textViews to respective views
-        dragRadius = (TextView) findViewById(R.id.drag_radius_input);                   //Drag Radius value is set on ConfigUtilityPageActivity
 
-        bluetoothIn = new Handler() {
-            public void handleMessage(android.os.Message msg) {                                 // data coming from Bluetooth Buoy is handled here
+        EditText dragRadius = (EditText) findViewById(R.id.drag_radius_input);
+        dragRadius.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast msg = Toast.makeText(getBaseContext(), "Drag Radius is Set!",
+                        Toast.LENGTH_LONG);
+                msg.show();
+            }
+        });
+        
+
+        String dragRadiusValue = dragRadius.getText().toString();
+
+
+        bluetoothIn  = new Handler() {
+            public void handleMessage(android.os.Message msg) {                         // data coming from Bluetooth Buoy is handled here
                 if (msg.what == handlerState) {										    // if message is what is expected
                     String readMessage = (String) msg.obj;                              // cast msg.obj to String
                     gpsData.append(readMessage);      						            // keep appending to string until end of string (!) is reached
@@ -146,20 +164,39 @@ public class AnchorBoyMainActivity extends AppCompatActivity {
 
     public void onClickSetPosition(View view) {
         //TODO write code to handle what happens when the "Set Position" button is clicked.
+
         Toast.makeText(this, "ANCHOR POSITION SET!", Toast.LENGTH_LONG).show();
     }
 
+    public void onClickSetRadius(View view) {
+        //TODO write code to handle what happens when the "Set Radius" button is clicked.
+
+        Toast.makeText(this, "Drag Radius is Set!", Toast.LENGTH_LONG).show();
+    }
+
+    private void openUnits() {
+        //TODO make ActionBar Units do something
+    }
     private void openSettings(){
         //TODO make ActionBar setting do something
     }
-    private void openSearch(){
-        //TODO make ActionBar search do something
-    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu items for use in the action bar
+        // Inflate the menu items for use in the action bar; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_actions, menu);
+
+        //TODO // FIXME: 10/21/2016 Accesses the unit_spinner Spinner. Spinner shows up and contains options, but they do nothing yet.
+        Spinner spinnerUnit = (Spinner) findViewById(R.id.action_unit);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterUnit = ArrayAdapter.createFromResource(this, R.array.units_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of unit choices appears
+        adapterUnit.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        assert spinnerUnit != null;
+        spinnerUnit.setAdapter(adapterUnit);
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -167,15 +204,23 @@ public class AnchorBoyMainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
-            case R.id.action_search:
-                openSearch();
-                return true;
+            case R.id.action_unit:
+                openUnits();
             case R.id.action_settings:
                 openSettings();
                 return true;
+            case R.id.exit:
+                finish();
+                return(true);
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void onClickBluetooth(View view) {
+    }
+
+    public void onClickGoToMap(View view) {
     }
 
     //create new class for connect thread

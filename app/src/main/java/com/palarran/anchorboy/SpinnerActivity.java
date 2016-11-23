@@ -5,8 +5,12 @@ import android.view.View;
 import android.widget.AdapterView;
 
 /**
- * App name:
+ * App name: AnchorBoy
  * Created by CB on 10/21/2016.
+ *
+ * This is the Units(Feet, Yards, Meters, Fathoms) selection spinner.
+ * Default setting is Feet.
+ *
  */
 
 public class SpinnerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {

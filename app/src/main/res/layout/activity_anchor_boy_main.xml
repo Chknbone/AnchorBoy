@@ -82,13 +82,25 @@
         android:layout_gravity="start"
         android:hint="@string/drag_radius_number"
         android:inputType="numberDecimal"
+        android:clickable="true"
         android:imeOptions="actionDone"/>
+
+    <Button
+        android:id="@+id/SET_RADIUS_BUTTON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/set_radius"
+        android:onClick="onClickSetRadius"/>
 
     <Button
         android:id="@+id/BLUETOOTH_BUTTON"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="4"
+        android:layout_row="5"
         android:layout_column="0"
         android:layout_columnSpan="2"
         android:layout_gravity="center_horizontal"
@@ -99,7 +111,7 @@
         android:id="@+id/GOTO_MAP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="5"
+        android:layout_row="6"
         android:layout_column="0"
         android:layout_columnSpan="2"
         android:layout_gravity="center_horizontal"

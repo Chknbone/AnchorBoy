@@ -17,7 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ConfigUtilityPageActivity"/>
         <activity android:name=".BluetoothDeviceListActivity"/>
         <activity android:name=".PairBluetoothActivity"/>
 
